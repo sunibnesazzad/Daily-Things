@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Item;
 use App\Category;
+use Yajra\Datatables\Datatables;
 use Illuminate\Http\Request;
 
 class ItemController extends Controller
@@ -12,6 +13,12 @@ class ItemController extends Controller
     public function index(){
         $items= Item::all();
         return view('items.index',compact('items'))->with('title','Items');
+    }
+
+    //showing all categories
+    public function inventory(){
+        $items= Item::all();
+        return view('items.inventory',compact('items'))->with('title','Item Inventory');
     }
 
     //deleting category
@@ -24,7 +31,7 @@ class ItemController extends Controller
     public function create(){
 
         $categorys= Category::all();
-        return view('items.create',compact('categorys'))->with('title',"Create Items");
+        return view('items.create1',compact('categorys'))->with('title',"Add Items");
     }
 
     //storing in database
@@ -47,7 +54,7 @@ class ItemController extends Controller
         $item->date_of_purchase = $request->input('purchase_date');
         $item->save();
 
-        return redirect('/item')->with('success', 'Item added successfully!');
+        return redirect('item/inventory')->with('success', 'Item added successfully!');
     }
 
     //Showing the update Page
@@ -79,8 +86,15 @@ class ItemController extends Controller
         //updating in database
         Item::where('id',$id)->update($data);
 
-        return redirect('/item')->with('success', 'Item updated successfully!');
+        return redirect('item/inventory')->with('success', 'Item updated successfully!');
 
+    }
+
+    /*function for datatable*/
+    public function getItems()
+    {
+        $items = Datatables::of(Item::query())->make(true);;
+        return $items;
     }
 
 }

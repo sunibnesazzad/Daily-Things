@@ -7,6 +7,7 @@
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta content="Admin Dashboard" name="description" />
     <meta content="" name="author" />
+
     @include('partials.styles')
 
     <script>

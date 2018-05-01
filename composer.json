@@ -15,7 +15,8 @@
         "league/fractal": "^0.17.0",
         "rap2hpoutre/laravel-log-viewer": "^0.11.0",
         "spatie/laravel-permission": "^2.9",
-        "tymon/jwt-auth": "dev-develop"
+        "tymon/jwt-auth": "dev-develop",
+        "yajra/laravel-datatables-oracle": "^8.4"
     },
     "require-dev": {
         "filp/whoops": "~2.0",

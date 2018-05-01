@@ -150,7 +150,8 @@ return [
         /*
          * Package Service Providers...
          */
-
+        /*data tables service provider*/
+        Yajra\Datatables\DatatablesServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -215,6 +216,9 @@ return [
         'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
         'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
         'Menu' => App\BaseSettings\Menu::class,
+
+        /*data tables service provider*/
+        'Datatables' => Yajra\Datatables\Facades\Datatables::class,
     ],
 
 ];

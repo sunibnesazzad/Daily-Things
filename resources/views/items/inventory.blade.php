@@ -1,36 +1,9 @@
-{{--@extends('front.layouts.default')
-
-@section('content')
-
-    <h2 class="text-center">Categories</h2>
-    <br>
-    <div class="text-center">
-        <table style="width:80%" class="text-center">
-            <tr class="text-center">
-                <th>ID</th>
-                <th>Name</th>
-                <th>Update</th>
-                <th>Delete</th>
-            </tr>
-            @foreach($categorys as $category)
-                <tr class="text-center">
-                    <td>{!! $category->id !!}</td>
-                    <td>{!! $category->name !!}</td>
-                    <td><a href="" class="btn btn-success">Edit</a></td>
-                    <td><a href="/category/delete/{{$category->id}}" class="btn btn-danger">Delete</a></td>
-                </tr>
-            @endforeach
-        </table>
-    </div>
-
-@endsection--}}
-
 @extends('layouts.app')
 
 @section('content')
     <!-- BEGIN PAGE TITLE-->
     <h1 align="center">
-        All Categories
+        All The Items
     </h1>
     <div class="row">
         <div class="col-md-12">
@@ -39,7 +12,7 @@
                 <div class="portlet-title">
                     <div class="caption font-dark">
                         <i class="icon-settings font-dark"></i>
-                        <span class="caption-subject bold uppercase"> Category Inventory</span>
+                        <span class="caption-subject bold uppercase"> Item Inventory</span>
                     </div>
                     <div class="actions">
                         <div class="btn-group btn-group-devided" data-toggle="buttons">
@@ -55,7 +28,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="btn-group">
-                                    <a href="category/create" id="sample_editable_1_new" class="btn sbold green"> Add New
+                                    <a href="/item/create" id="sample_editable_1_new" class="btn sbold green"> Add New
                                         <i class="fa fa-plus"></i>
                                     </a>
                                 </div>
@@ -86,19 +59,24 @@
                     <table class="table table-striped table-bordered table-hover table-checkable order-column" id="items">
                         <thead>
                         <tr>
-                            <th>
-                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                            <input type="checkbox" class="group-checkable" data-set="#sample_1 .checkboxes" />
-                            <span></span>
-                            </label>
-                            </th>
+                            {{--<th>--}}
+                                {{--<label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">--}}
+                                    {{--<input type="checkbox" class="group-checkable" data-set="#sample_1 .checkboxes" />--}}
+                                    {{--<span></span>--}}
+                                {{--</label>--}}
+                            {{--</th>--}}
                             <th>ID</th>
                             <th>Name</th>
-                            <th> Actions </th>
+                            {{--<th>Category</th>--}}
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Unit</th>
+                            <th>Date of Purchase</th>
+                            {{--<th> Actions </th>--}}
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($categorys as $category)
+                        {{--@foreach($items as $item)
                         <tr class="odd gradeX">
                             <td>
                                 <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
@@ -106,8 +84,16 @@
                                     <span></span>
                                 </label>
                             </td>
-                            <td>{!! $category->id !!}</td>
-                            <td>{!! $category->name !!}</td>
+                            <td> {!! $item->id !!}</td>
+                            <td>
+                                <a href="mailto:shuxer@gmail.com"> {!! $item->name !!} </a>
+                            </td>
+                            <td>
+                                <span> {!! $item->price !!} </span>
+                            </td>
+                            <td class="center"> {!! $item->quantity !!} </td>
+                            <td class="center"> {!! $item->unit !!} </td>
+                            <td class="center"> {!! $item->date_of_purchase !!} </td>
                             <td>
                                 <div class="btn-group">
                                     <button class="btn btn-xs green dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false"> Actions
@@ -119,18 +105,18 @@
                                                 <i class="icon-docs"></i> Detail </a>
                                         </li>
                                         <li>
-                                            <a href="category/update/{!!  $category->id !!}">
+                                            <a href="javascript:;">
                                                 <i class="icon-tag"></i> Update </a>
                                         </li>
                                         <li>
-                                            <a href="category/delete/{!!  $category->id !!}">
+                                            <a href="javascript:;">
                                                 <i class="icon-user"></i> Delete </a>
                                         </li>
                                     </ul>
                                 </div>
                             </td>
                         </tr>
-                        @endforeach
+                        @endforeach--}}
                         </tbody>
                     </table>
                 </div>
@@ -144,3 +130,23 @@
 
 
 @endsection
+
+@section('scripts')
+
+    <script type="text/javascript">
+        $('#items').DataTable({
+                "processing": true,
+                "serverSide": true,
+                "ajax": "{{ route('datatable.getitems') }}",
+                "columns": [
+                    {data: 'id', name: 'id'},
+                    {data: 'name', name: 'name'},
+                    {data: 'price', name: 'price'},
+                    {data: 'quantity', name: 'quantity'},
+                    {data: 'unit', name: 'unit'},
+                    {data: 'date_of_purchase', name: 'date_of_purchase'}
+                ]
+            });
+
+    </script>
+    @endsection

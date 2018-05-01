@@ -1,9 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-
     <h1 align="center">
-        Update Item
+        Add Item
     </h1>
     <div class="row">
         <div class="col-md-12">
@@ -39,7 +38,7 @@
                 </div>
                 <div class="portlet-body">
                     <!-- BEGIN FORM-->
-                    <form  action="item/edit/{{$item->id}}" method="POST" id="form_sample_2" class="form-horizontal">
+                    <form action="/item/store" method="POST" id="form_sample_2" class="form-horizontal">
                         {{ csrf_field() }}
                         <div class="form-body">
                             <div class="alert alert-danger display-hide">
@@ -53,7 +52,7 @@
                                 <div class="col-md-4">
                                     <div class="input-icon right">
                                         <i class="fa"></i>
-                                        <input type="text" class="form-control" name="name" value="{{$item->name}}" required/> </div>
+                                        <input type="text" class="form-control" name="name" required/> </div>
                                 </div>
                             </div>
                             <div class="form-group  margin-top-20">
@@ -63,7 +62,7 @@
                                 <div class="col-md-4">
                                     <div class="input-icon right">
                                         <i class="fa"></i>
-                                        <input type="number" class="form-control" name="price" value="{{$item->price}}" required/> </div>
+                                        <input type="number" class="form-control" name="price" required/> </div>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -71,7 +70,7 @@
                                     <span class="required"> : </span>
                                 </label>
                                 <div class="col-md-4">
-                                    <select class="form-control" name="category" value="{{$item->category->id}}">
+                                    <select class="form-control" name="category">
                                         @foreach($categorys as $category)
                                             <option value="{{$category->id}}">{{$category->name}}</option>
                                         @endforeach
@@ -85,7 +84,7 @@
                                 <div class="col-md-4">
                                     <div class="input-icon right">
                                         <i class="fa"></i>
-                                        <input type="number" class="form-control" name="quantity" value="{{$item->quantity}}" required/> </div>
+                                        <input type="number" class="form-control" name="quantity" required/> </div>
                                 </div>
                             </div>
                             <div class="form-group  margin-top-20">
@@ -103,9 +102,16 @@
                                     <span class="required"> : </span>
                                 </label>
                                 <div class="col-md-4">
-                                    <div class="input-icon right">
-                                        <i class="fa"></i>
-                                        <input type="datetime-local" class="form-control" name="purchase_date" value="{{$item->date_of_purchase}}" required> </div>
+                                    <div class="input-group date" id="datetimepicker2">
+                                        <input type="text" class="form-control" name="purchase_date" required />
+                                        <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>
+
+                                    {{--<div class="input-icon right">--}}
+                                        {{--<i class="fa"></i>--}}
+                                        {{--<input type="date" class="form-control" name="purchase_date" required> </div>--}}
                                 </div>
                             </div>
                         </div>
@@ -125,5 +131,16 @@
         </div>
     </div>
 
+@endsection
 
+
+@section('scripts')
+    <script src="{{asset('https://code.jquery.com/jquery-2.0.min.js')}}"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('#datetimepicker2').datetimepicker({
+                locale: 'ru'
+            });
+        });
+    </script>
 @endsection

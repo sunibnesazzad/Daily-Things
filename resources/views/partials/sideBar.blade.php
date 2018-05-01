@@ -31,6 +31,50 @@
                 </a>
             </li>
 
+            <li class="heading">
+                <h3 class="uppercase">Features</h3>
+            </li>
+
+            <li class="nav-item {!! Menu::isActiveRoute('items.inventory') !!} ">
+                <a href="/item/inventory" class="nav-link nav-toggle">
+                    <i class="icon-basket"></i>
+                    <span class="title">Items</span>
+                    <span class="arrow"></span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="nav-item  ">
+                        <a href="/item/inventory" class="nav-link ">
+                            <span class="title">All Items</span>
+                        </a>
+                    </li>
+                    <li class="nav-item  ">
+                        <a href="/item/create" class="nav-link ">
+                            <span class="title">Add Item</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item {!! Menu::isActiveRoute('category.index') !!} ">
+                <a href="javascript:;" class="nav-link nav-toggle">
+                    <i class="icon-folder"></i>
+                    <span class="title">Category</span>
+                    <span class="arrow"></span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="nav-item  ">
+                        <a href="/category" class="nav-link ">
+                            <span class="title">All Categories</span>
+                        </a>
+                    </li>
+                    <li class="nav-item  ">
+                        <a href="category/create" class="nav-link ">
+                            <span class="title">Add Category</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+
         </ul>
         <!-- END SIDEBAR MENU -->
         <!-- END SIDEBAR MENU -->

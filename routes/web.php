@@ -39,29 +39,52 @@ Route::group(['middleware' => ['auth']],function (){
     // laravel logs viewer
     Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 
+    /*Item part*/
+    /*showing all items*/
+    Route::get('item/inventory', ['as' => 'items.inventory', 'uses' => 'ItemController@inventory']);
+    //datatables Route
+    Route::get('datatable/getitems', [ 'as'=>'datatable.getitems','uses'=>'ItemController@getItems' ]);
+    /*creating Items*/
+    Route::get('item/create', ['as' => 'items.create', 'uses' => 'ItemController@create']);
+
+    Route::post('/item/store', ['as' => 'items.store', 'uses' => 'ItemController@store']);
+    /*Updating Item*/
+    Route::get('item/update/{id}', ['as' => 'items.update', 'uses' => 'ItemController@update']);
+
+    Route::post('item/edit/{id}', ['as' => 'items.edit', 'uses' => 'ItemController@edit']);
+    //deleting category
+    Route::get('/item/delete/{id}','ItemController@destroy');
+
+
+    /*Category Routes*/
+    Route::get('category', ['as' => 'category.index', 'uses' => 'CategoryController@index']);
+    /*creating Category*/
+    Route::get('category/create', ['as' => 'category.create', 'uses' => 'CategoryController@create']);
+
+    Route::post('category/store', ['as' => 'category.store', 'uses' => 'CategoryController@store']);
+    /*Updating Category*/
+    Route::get('category/update/{id}', ['as' => 'category.update', 'uses' => 'CategoryController@update']);
+
+    Route::post('category/edit/{id}', ['as' => 'category.edit', 'uses' => 'CategoryController@edit']);
+    //deleting category
+    Route::get('category/delete/{id}',['as' => 'category.delete', 'uses' => 'CategoryController@destroy']);
+
 });
 
 
-/*Category Routes*/
-Route::get('/category', ['as' => 'category.index', 'uses' => 'CategoryController@index']);
-//deleting category
-Route::get('/category/delete/{id}','CategoryController@destroy');
+
 
 
 
 /*Item Routes*/
 /*showing all items*/
-Route::get('/item', ['as' => 'items.index', 'uses' => 'ItemController@index']);
+Route::get('item', ['as' => 'items.index', 'uses' => 'ItemController@index']);
+//datatables Route
+Route::get('datatable/getitems', [ 'as'=>'datatable.getitems','uses'=>'ItemController@getItems' ]);
 /*creating Items*/
-Route::get('/item/create', ['as' => 'items.create', 'uses' => 'ItemController@create']);
 
-Route::post('/item/store', ['as' => 'items.store', 'uses' => 'ItemController@store']);
-//deleting category
-Route::get('/item/delete/{id}','ItemController@destroy');
-/*Updating Item*/
-Route::get('/item/update/{id}', ['as' => 'items.update', 'uses' => 'ItemController@update']);
 
-Route::post('/item/edit/{id}', ['as' => 'items.edit', 'uses' => 'ItemController@edit']);
+
 
 
 
