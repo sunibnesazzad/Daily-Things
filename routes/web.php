@@ -69,6 +69,16 @@ Route::group(['middleware' => ['auth']],function (){
     //deleting category
     Route::get('category/delete/{id}',['as' => 'category.delete', 'uses' => 'CategoryController@destroy']);
 
+    //Inventory Routes
+    /*showing all items*/
+    Route::get('/inventory', ['as' => 'inventory.index', 'uses' => 'Inventory\InventoryController@index']);
+    //datatables Route
+    Route::get('datatable/getinventory/items', [ 'as'=>'datatable.getinventory.items','uses'=>'Inventory\InventoryController@getItems' ]);
+    /*creating Items*/
+    Route::get('/inventory/create', ['as' => 'inventory.create', 'uses' => 'Inventory\InventoryController@create']);
+
+    Route::post('/inventory/store', ['as' => 'inventory.store', 'uses' => 'Inventory\InventoryController@store']);
+
 });
 
 

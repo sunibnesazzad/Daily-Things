@@ -54,6 +54,25 @@
                     </li>
                 </ul>
             </li>
+            <li class="nav-item {!! Menu::isActiveRoute('inventory.index') !!} ">
+                <a href="/inventory" class="nav-link nav-toggle">
+                    <i class="icon-basket"></i>
+                    <span class="title">Inventory</span>
+                    <span class="arrow"></span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="nav-item {!! Menu::isActiveRoute('inventory.index') !!} ">
+                        <a href="/inventory" class="nav-link ">
+                            <span class="title">All Inventory Items</span>
+                        </a>
+                    </li>
+                    <li class="nav-item {!! Menu::isActiveRoute('inventory.index') !!} ">
+                        <a href="/inventory/create" class="nav-link ">
+                            <span class="title">Add Inventory Item</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
             <li class="nav-item {!! Menu::isActiveRoute('category.index') !!} ">
                 <a href="javascript:;" class="nav-link nav-toggle">
                     <i class="icon-folder"></i>
