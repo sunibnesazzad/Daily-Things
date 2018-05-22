@@ -135,7 +135,7 @@
 
 
 @section('scripts')
-    <script src="{{asset('https://code.jquery.com/jquery-2.0.min.js')}}"></script>
+    {{--<script src="{{asset('https://code.jquery.com/jquery-2.0.min.js')}}"></script>--}}
     <script type="text/javascript">
         $(function () {
             $('#datetimepicker2').datetimepicker({

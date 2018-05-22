@@ -152,6 +152,7 @@ return [
          */
         /*data tables service provider*/
         Yajra\Datatables\DatatablesServiceProvider::class,
+        Khill\Lavacharts\Laravel\LavachartsServiceProvider::class,
         /*
          * Application Service Providers...
          */

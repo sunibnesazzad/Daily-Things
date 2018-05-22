@@ -92,7 +92,30 @@
                     </li>
                 </ul>
             </li>
-
+            <li class="nav-item {!! Menu::isActiveRoute('item.chart') !!} ">
+                <a href="javascript:;" class="nav-link nav-toggle">
+                    <i class="icon-graph"></i>
+                    <span class="title">Charts</span>
+                    <span class="arrow"></span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="nav-item  ">
+                        <a href="{!! route('monthly.price') !!}" class="nav-link ">
+                            <span class="title">Monthly Price</span>
+                        </a>
+                    </li>
+                    <li class="nav-item  ">
+                        <a href="{!! route('item.chart') !!}" class="nav-link ">
+                            <span class="title">Item Charts</span>
+                        </a>
+                    </li>
+                    <li class="nav-item  ">
+                        <a href="{!! route('quantity.chart') !!}" class="nav-link ">
+                            <span class="title">Area Charts</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
 
         </ul>
         <!-- END SIDEBAR MENU -->

@@ -1,5 +1,5 @@
 {{--<!-- BEGIN GLOBAL MANDATORY STYLES -->--}}
-<script src="{{asset('js/jquery2.0.3.min.js')}}"></script>
+
 
 <link rel="stylesheet" href="{!! asset('assets/global/plugins/font-awesome/css/font-awesome.min.css') !!}">
 <link rel="stylesheet" href="{!! asset('assets/global/fonts/google-fonts.css') !!}">

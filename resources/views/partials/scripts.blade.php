@@ -26,6 +26,7 @@
 <script type="text/javascript" src="{!! asset('assets/layouts/global/scripts/quick-sidebar.min.js') !!}"></script>
 <script type="text/javascript" src="{!! asset('assets/layouts/global/scripts/quick-nav.min.js') !!}"></script>
 
+
 <script>
     $(document).ready(function()
     {

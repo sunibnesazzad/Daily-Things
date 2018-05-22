@@ -79,6 +79,13 @@ Route::group(['middleware' => ['auth']],function (){
 
     Route::post('/inventory/store', ['as' => 'inventory.store', 'uses' => 'Inventory\InventoryController@store']);
 
+    /*Charts Rotes*/
+    Route::get('item/chart', ['as' => 'item.chart', 'uses' => 'Chart\ChartItemController@priceChart']);
+    /*Area Chart*/
+    Route::get('quantity/chart', ['as' => 'quantity.chart', 'uses' => 'Chart\ChartItemController@quantityChart']);
+    /*monthly price chart*/
+    Route::get('monthly/price', ['as' => 'monthly.price', 'uses' => 'Chart\ChartItemController@monthlyPrice']);
+    Route::post('monthly/price', ['as' => 'monthly.price.chart', 'uses' => 'Chart\ChartItemController@monthlyPriceChart']);
 });
 
 
