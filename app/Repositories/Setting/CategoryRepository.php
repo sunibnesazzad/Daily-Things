@@ -41,6 +41,10 @@ class CategoryRepository extends Repository
        return $this->model->all();
     }
 
-
+    public function findId($id)
+    {
+        $data = $this->model->find($id);
+        return $data;
+    }
 
 }

@@ -57,15 +57,15 @@ Route::group(['middleware' => ['auth']],function (){
 
 
     /*Category Routes*/
-    Route::get('category', ['as' => 'category.index', 'uses' => 'CategoryController@index']);
+    Route::get('category', ['as' => 'category.index', 'uses' => 'Category\CategoryController@index']);
     /*creating Category*/
-    Route::get('category/create', ['as' => 'category.create', 'uses' => 'CategoryController@create']);
+    Route::get('category/create', ['as' => 'category.create', 'uses' => 'Category\CategoryController@create']);
 
-    Route::post('category/store', ['as' => 'category.store', 'uses' => 'CategoryController@store']);
+    Route::post('category/store', ['as' => 'category.store', 'uses' => 'Category\CategoryController@store']);
     /*Updating Category*/
-    Route::get('category/update/{id}', ['as' => 'category.update', 'uses' => 'CategoryController@update']);
+    Route::get('category/update/{id}', ['as' => 'category.update', 'uses' => 'Category\CategoryController@update']);
 
-    Route::post('category/edit/{id}', ['as' => 'category.edit', 'uses' => 'CategoryController@edit']);
+    Route::post('category/edit/{id}', ['as' => 'category.edit', 'uses' => 'Category\CategoryController@edit']);
     //deleting category
     Route::get('category/delete/{id}',['as' => 'category.delete', 'uses' => 'CategoryController@destroy']);
 
@@ -85,7 +85,7 @@ Route::group(['middleware' => ['auth']],function (){
     Route::get('quantity/chart', ['as' => 'quantity.chart', 'uses' => 'Chart\ChartItemController@quantityChart']);
     /*monthly price chart*/
     Route::get('monthly/price', ['as' => 'monthly.price', 'uses' => 'Chart\ChartItemController@monthlyPrice']);
-    Route::post('monthly/price', ['as' => 'monthly.price.chart', 'uses' => 'Chart\ChartItemController@monthlyPriceChart']);
+    Route::post('monthly/price', ['as' => 'monthly.price.chart', 'uses' => 'Chart\ChartItemController@monthlyPrice']);
 });
 
 

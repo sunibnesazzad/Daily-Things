@@ -6,36 +6,6 @@
     </h1>
     <div class="row">
         <div class="col-md-12">
-            <!-- BEGIN VALIDATION STATES-->
-            <div class="portlet light portlet-fit portlet-form bordered">
-                <div class="portlet-title">
-                    <div class="caption">
-                        <i class="icon-bubble font-green"></i>
-                        <span class="caption-subject font-green bold uppercase">Validation Using Icons</span>
-                    </div>
-                    <div class="actions">
-                        <div class="btn-group">
-                            <a class="btn green btn-outline btn-circle btn-sm" href="javascript:;" data-toggle="dropdown" data-hover="dropdown" data-close-others="true"> Actions
-                                <i class="fa fa-angle-down"></i>
-                            </a>
-                            <ul class="dropdown-menu pull-right">
-                                <li>
-                                    <a href="javascript:;"> Option 1</a>
-                                </li>
-                                <li class="divider"> </li>
-                                <li>
-                                    <a href="javascript:;">Option 2</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;">Option 3</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;">Option 4</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
                 <div class="portlet-body">
                     <!-- BEGIN FORM-->
                     <form action="/category/store" method="POST" id="form_sample_2" class="form-horizontal">
@@ -60,7 +30,7 @@
                             <div class="row">
                                 <div class="col-md-offset-3 col-md-9">
                                     <button type="submit" class="btn green">Create</button>
-                                    <button type="button" class="btn default">Cancel</button>
+                                    {{--<button type="button" class="btn default">Cancel</button>--}}
                                 </div>
                             </div>
                         </div>

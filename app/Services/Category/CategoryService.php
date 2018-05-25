@@ -30,4 +30,30 @@ class CategoryService extends BaseService
     {
         // TODO: Implement baseRepository() method.
     }
+
+    public function store($request)
+    {
+        (array)$data = $request->all();
+        return $this->categoryRepository->create($data);
+    }
+
+    /**
+     * Update category
+     * @param $request
+     * @param $id
+     * @return mixed
+     */
+    public function updateCategory($request,$id)
+    {
+        (array)$data = $request->all();
+        return $this->categoryRepository->update($data,$id);
+    }
+
+    public function updateId($id)
+    {
+        $category = $this->categoryRepository->findId($id);
+        return $category;
+
+    }
+
 }

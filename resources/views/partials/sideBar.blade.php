@@ -73,20 +73,20 @@
                     </li>
                 </ul>
             </li>
-            <li class="nav-item {!! Menu::isActiveRoute('category.index') !!} ">
+            <li class="nav-item {!! Menu::isActiveRoute('category.index') !!}">
                 <a href="javascript:;" class="nav-link nav-toggle">
                     <i class="icon-folder"></i>
                     <span class="title">Category</span>
                     <span class="arrow"></span>
                 </a>
                 <ul class="sub-menu">
-                    <li class="nav-item  ">
-                        <a href="/category" class="nav-link ">
+                    <li class="nav-item {!! Menu::isActiveRoute('category.index') !!}">
+                        <a href="{!! route('category.index') !!}" class="nav-link ">
                             <span class="title">All Categories</span>
                         </a>
                     </li>
-                    <li class="nav-item  ">
-                        <a href="category/create" class="nav-link ">
+                    <li class="nav-item {!! Menu::isActiveRoute('category.create') !!}">
+                        <a href="{!! route('category.create') !!}" class="nav-link ">
                             <span class="title">Add Category</span>
                         </a>
                     </li>

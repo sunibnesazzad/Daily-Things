@@ -13,7 +13,7 @@
                         <i class="icon-bubble font-green"></i>
                         <span class="caption-subject font-green bold uppercase">Validation Using Icons</span>
                     </div>
-                    <div class="actions">
+                   {{-- <div class="actions">
                         <div class="btn-group">
                             <a class="btn green btn-outline btn-circle btn-sm" href="javascript:;" data-toggle="dropdown" data-hover="dropdown" data-close-others="true"> Actions
                                 <i class="fa fa-angle-down"></i>
@@ -34,7 +34,7 @@
                                 </li>
                             </ul>
                         </div>
-                    </div>
+                    </div>--}}
                 </div>
                 <div class="portlet-body">
                     <!-- BEGIN FORM-->
@@ -60,7 +60,7 @@
                             <div class="row">
                                 <div class="col-md-offset-3 col-md-9">
                                     <button type="submit" class="btn green">Update</button>
-                                    <button type="button" class="btn default">Cancel</button>
+                                    {{--<button type="button" class="btn default">Cancel</button>--}}
                                 </div>
                             </div>
                         </div>

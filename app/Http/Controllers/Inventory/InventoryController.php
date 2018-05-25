@@ -14,10 +14,10 @@ class InventoryController extends Controller
     private $categoryRepository;
 
     public function __construct(InventoryService $inventoryService, CategoryRepository $categoryRepository)
-    {
-        $this->inventoryService = $inventoryService;
-        $this->categoryRepository = $categoryRepository;
-    }
+{
+    $this->inventoryService = $inventoryService;
+    $this->categoryRepository = $categoryRepository;
+}
 
     public function index()
     {

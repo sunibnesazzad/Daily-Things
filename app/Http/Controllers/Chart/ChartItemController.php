@@ -15,8 +15,8 @@ class ChartItemController extends Controller
 {
     public function monthlyPrice(Request $request)
     {
+        $month = $request->get('month') ?? '1';
         $months= Month::all();
-        $month=1;
         $itemPrice = DB::table('items')
             ->select('price')
             ->whereMonth('date_of_purchase', '=', $month)
@@ -27,13 +27,14 @@ class ChartItemController extends Controller
             ->with('price',json_encode($price,JSON_NUMERIC_CHECK));;
     }
 
-    public function monthlyPriceChart(Request $request)
+    public function monthlyPriceChart(Request $request,$id)
     {
         $months= Month::all();
-        $this->validate($request,[
+        $month=$id;
+      /* $this->validate($request,[
             'month' => 'required',
         ]);
-        $month = $request->input('month');
+        $month = $request->input('month');*/
 
         $itemPrice = DB::table('items')
             ->select('price')
