@@ -68,4 +68,13 @@ class CategoryController extends Controller
         return redirect()->back()->with('error','Something went wrong. Try again.');
     }
 
+    //deleting category
+    public function destroy($id){
+        $category = $this->categoryService->deleteId($id);
+        if($category){
+            return redirect()->route('category.index')->with('success','Category deleted successfully.');
+        }
+        return redirect()->back()->with('error','Something went wrong. Try again.');
+    }
+
 }

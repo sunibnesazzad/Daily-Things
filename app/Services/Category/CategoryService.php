@@ -55,5 +55,11 @@ class CategoryService extends BaseService
         return $category;
 
     }
+    public function deleteId($id)
+    {
+        $category = $this->categoryRepository->delete($id);
+        return $category;
+
+    }
 
 }

@@ -87,18 +87,8 @@
                                         <i class="fa fa-angle-down"></i>
                                     </button>
                                     <ul class="dropdown-menu pull-left" role="menu">
-                                        <li>
-                                            <a href="category/update/{!!  $category->id !!}">
-                                                <i class="fa fa-edit"></i> Edit </a>
-                                        </li>
-                                        {{--<li>
-                                            <a href="category/delete/{!!  $category->id !!}">
-                                                <i class="icon-dislike"></i> Delete </a>
-                                        </li>--}}
-                                        <li>
-                                            <a  href="#" data-toggle="modal" data-target="#deleteConfirm" deleteUrl="{{ route('category.delete', $category->id) }}">
-                                                <i class="fa fa-trash"></i> Delete </a>
-                                        </li>
+                                        <li><a href="{{ route('category.update', $category->id) }}"><i class="fa fa-edit"></i> Edit </a></li>
+                                        <li><a class="deleteBtn" href="#" data-toggle="modal" data-target="#deleteConfirm" deleteUrl="{{ route('category.delete', $category->id) }}"><i class="fa fa-trash"></i> Delete </a></li>
                                     </ul>
                                 </div>
                             </td>
@@ -132,6 +122,10 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <div class="text-center">
+        {!! $categorys->links() !!}
     </div>
 
 @endsection

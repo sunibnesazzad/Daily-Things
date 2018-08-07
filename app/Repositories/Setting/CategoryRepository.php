@@ -38,7 +38,7 @@ class CategoryRepository extends Repository
     //showing all categories
     public function getAllCategory()
     {
-       return $this->model->all();
+       return $categorys= Category::paginate(5);
     }
 
     public function findId($id)
@@ -46,5 +46,6 @@ class CategoryRepository extends Repository
         $data = $this->model->find($id);
         return $data;
     }
+
 
 }

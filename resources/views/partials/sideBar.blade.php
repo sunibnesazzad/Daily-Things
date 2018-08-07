@@ -35,7 +35,7 @@
                 <h3 class="uppercase">Features</h3>
             </li>
 
-            <li class="nav-item {!! Menu::isActiveRoute('items.inventory') !!} ">
+            <li class="nav-item {!! Menu::areActiveRoutes(['inventory.index1','inventory.create1']) !!} ">
                 <a href="/item/inventory" class="nav-link nav-toggle">
                     <i class="icon-basket"></i>
                     <span class="title">Items</span>
@@ -54,7 +54,7 @@
                     </li>
                 </ul>
             </li>
-            <li class="nav-item {!! Menu::isActiveRoute('inventory.index') !!} ">
+            <li class="nav-item {!! Menu::areActiveRoutes(['inventory.index','inventory.create']) !!}">
                 <a href="/inventory" class="nav-link nav-toggle">
                     <i class="icon-basket"></i>
                     <span class="title">Inventory</span>
@@ -73,7 +73,7 @@
                     </li>
                 </ul>
             </li>
-            <li class="nav-item {!! Menu::isActiveRoute('category.index') !!}">
+            <li class="nav-item  {!! Menu::areActiveRoutes(['category.index','category.create']) !!}">
                 <a href="javascript:;" class="nav-link nav-toggle">
                     <i class="icon-folder"></i>
                     <span class="title">Category</span>
@@ -92,7 +92,7 @@
                     </li>
                 </ul>
             </li>
-            <li class="nav-item {!! Menu::isActiveRoute('item.chart') !!} ">
+            <li class="nav-item {!! Menu::areActiveRoutes(['monthly.price','item.chart','quantity.chart']) !!} ">
                 <a href="javascript:;" class="nav-link nav-toggle">
                     <i class="icon-graph"></i>
                     <span class="title">Charts</span>

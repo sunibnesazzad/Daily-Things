@@ -67,7 +67,7 @@ Route::group(['middleware' => ['auth']],function (){
 
     Route::post('category/edit/{id}', ['as' => 'category.edit', 'uses' => 'Category\CategoryController@edit']);
     //deleting category
-    Route::get('category/delete/{id}',['as' => 'category.delete', 'uses' => 'CategoryController@destroy']);
+    Route::delete('category/delete/{id}',['as' => 'category.delete', 'uses' => 'Category\CategoryController@destroy']);
 
     //Inventory Routes
     /*showing all items*/
